@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LEMONIES</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/d78cb1c4f2.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500;600&display=swap" rel="stylesheet">
+	    <!-- AOS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div id="navPosition">
+		<div class="navbar-center">
+			<!-- <div class="brand">
+				<a href="./index.html"><img class="card-img-top" src="./images/logo.jpg" alt="logo"></a>
+			</div> -->
+			<div class="cart-btn">
+				<span class="nav-icon">
+					<a href="#" class="abrirCarrito"><i class="fa-solid fa-cart-shopping"></i></a>
+				</span>
+				<div id="cart-items">0</div>
+			</div>
+			<div class="barraNavegacion">
+					<nav class="navbar navbar-dark">
+						<div class="container-fluid btn__navflex">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+						</div>
+					</nav>
+					<div class="collapse" id="navbarToggleExternalContent">
+						<div class="enlacesBarra">
+							<ul>
+								<li><a href="#productos">PRODUCTOS</a></li>
+								<li><a href="#nosotros">NOSOTROS</a></li>
+								<li><a href="#galeria">GALERIA</a></li>
+								<li><a href="#contacto">CONTACTO</a></li>
+							</ul>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<header class="fotoFondo">
+		<div class="banner">
+			<h1 class="banner-img"><img src="./images/logo.jpg" alt="" srcset=""></h1>
+			<button class="banner-title" >Nuestros Productos</button>
+		</div> 
+	</header>
+
+	<main>
+		<section id="productos">
+			<h2>NUESTROS PRODUCTOS</h2>
+			<div>
+				<div class="row row-cols-1 row-cols-md-3 g-4" id="cartas">					
+				</div> 
+			</div>
+		</section>
+
+		<section class="miModal">
+			<div class="modalContenedor">
+				<button type="button" class="btn-close cerrarCarrito" aria-label="Close"></button>				
+				<!-- <a href="#" class="cerrarCarrito">X</a> -->
+				<h2 class="modalTitulo">Tu carrito</h2>
+				<div id="carritoContenedor"></div>
+				<p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+				<button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+				<button id="comprar-carrito" class="boton-agregar">Comprar</button>
+			</div>
+		</section>
+	
+
+
+		<section id="nosotros">
+			<h2>NOSOTROS</h2>
+			<p>Somos un grupo de emprendedores dedicados a la pastelería. Realizamos nuestro trabajo con placer y dedicacion, y utilizando productos de primera calidad dando como resultado productos excelentes, que gustan a todo aquél que prueba!</p>
+
+		</section>
+
+		<section id="galeria">
+			<h2>GALERIA</h2>
+			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<img src="./images/croissantgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/postregaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/general2galeria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/generalgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/financiersgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/danesasgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/galletasgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/lemoniesgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/milhojasgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/palmeritasgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/tortitasgaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="./images/sfogliatellagaleria.jpg" class="d-block galeriaFotos" alt="...">
+				  </div>
+
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Next</span>
+				</button>
+			  </div>
+
+		<section id="contacto">
+			<h2>CONTACTANOS</h2>
+			<div class="formulario">
+				<div class="form__margin">
+					<form id="form">
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label label__margin">Nombre</label>
+							<input type="text" class="form-control nombreForm input" id="nombre"
+								placeholder="Introduzca su nombre" name="nombre" required>
+						</div>
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+							<input type="email" class="form-control input" id="email"
+								placeholder="sucorreo@sucorreo.com.ar" name="email" required>
+						</div>
+						<div class="mb-3">
+							<label for="number_phone" class="form-label">Número de Telefóno</label>
+							<input type="number" class="form-control telForm input" id="phone"
+								placeholder="Introduzca su número de teléfono" name="phone"  required>
+						</div>
+						<div class="mb-3">
+							<label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+							<textarea class="form-control" id="" rows="3"
+								placeholder="Deje su mensaje aquí" name="message" required></textarea>
+						</div>
+						<button id="btnSubmit" class="btn btn-success btn-large buttonPropiedades" type="submit">Enviar</button>
+					</form>
+					<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+					
+					<script type="text/javascript">
+						emailjs.init('Od-FpZp72Cg-O2WOv')
+					</script>
+				</div>
+
+
+			</div>
+			<p>Seguinos en nuestras redes sociales</p>
+			<ul class="icons__redes">
+                <li><a href="#contacto"><i class="fa-brands fa-telegram"></i></a></li>
+                <li><a href="#contacto"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/lemonies.pasteleria.artesanal/?hl=es-la"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+		</section>
+	</main>
+
+	<footer>
+		<p class="fraseFooter"><i class="fas fa-registered"></i>Todos los derechos reservados</p>
+	</footer>
+
+    <a href="#contacto"><i class="fa-brands fa-whatsapp-square"></i></a>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<!-- Sweet Alert -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="./js/main.js"></script>
+</body>
+
+</html>
