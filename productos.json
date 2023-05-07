@@ -47,5 +47,23 @@
 		"descripcion": "Exclusiva Caja de Tortitas, de seis unidades a eleccion! Se puede elegir entre varios sabores!",
 		"cantidad": 1,
 		"sabor": ["lemon pie", "coco", "valeria", "ricota","manzana", "frutilla"]
+	},
+	{
+		"id" : 7,
+		"imagen": "./images/pasteldepapa.png",
+		"nombre": "Pastel de Papas",
+		"precio": 1000,
+		"descripcion": "Pastel de papa",
+		"cantidad": 1,
+		"sabor": ["lemon pie", "coco", "valeria", "ricota","manzana", "frutilla"]
+	},
+	{
+		"id" : 6,
+		"imagen": "./images/cajatortitas.jpg",
+		"nombre": "Caja de Tortitas",
+		"precio": 1000,
+		"descripcion": "Exclusiva Caja de Tortitas, de seis unidades a eleccion! Se puede elegir entre varios sabores!",
+		"cantidad": 1,
+		"sabor": ["lemon pie", "coco", "valeria", "ricota","manzana", "frutilla"]
 	}
 ]

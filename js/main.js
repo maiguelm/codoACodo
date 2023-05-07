@@ -396,3 +396,95 @@ closeModal.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.remove('modal--show');
 });
+
+
+//CARROUSEL
+
+const slider = document.querySelector("#slider");
+let sliderSection = document.querySelectorAll(".slider-section");
+let sliderSectionLast = sliderSection[sliderSection.length -1];
+
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+
+slider.insertAdjacentElement('afterbegin', sliderSectionLast)
+
+function Next() {
+    let sliderSectionFirst = document.querySelectorAll(".slider-section")[0];
+    slider.style.marginLeft = "-200%";
+    slider.style.transition = "all 0.6s";
+    setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend', sliderSectionFirst);
+        slider.style.marginLeft = "-100%"
+    }, 600);
+}
+btnRight.addEventListener('click', () =>{
+    console.log("click")
+    Next();
+})
+
+function Prev() {
+    let sliderSection = document.querySelectorAll(".slider-section");
+    let sliderSectionLast = sliderSection[sliderSection.length -1];
+    slider.style.marginLeft = "0";
+    slider.style.transition = "all 0.6s";
+    setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('afterbegin', sliderSectionLast);
+        slider.style.marginLeft = "-100%"
+    }, 600);
+}
+btnLeft.addEventListener('click', () =>{
+    console.log("click")
+    Prev();
+})
+
+setInterval( () => {
+    Next();
+}, 3000);
+
+
+/* const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+
+let counter = 1;
+const size = carouselImages[0].clientWidth;
+
+carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+
+nextButton.addEventListener('click', () => {
+  if (counter >= carouselImages.length - 1) {
+    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+    counter = 0;
+    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+  } else {
+    counter++;
+    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+  }
+});
+
+prevButton.addEventListener('click', () => {
+  if (counter <= 0) return;
+  counter--;
+  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+  carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+});
+
+carouselSlide.addEventListener('transitionend', () => {
+  if (carouselImages[counter].id === 'lastClone') {
+    carouselSlide.style.transition = 'none';
+    counter = carouselImages.length - 2;
+    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+  }
+  if (carouselImages[counter].id === 'firstClone') {
+    carouselSlide.style.transition = 'none';
+    counter = 1;
+    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
+  }
+});
+ */
