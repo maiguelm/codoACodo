@@ -1,51 +1,74 @@
 [
 	{
 		"id" : 1,
-		"imagen": "./images/croissant.jpg",
-		"nombre": "Croissant",
-		"precio": 250,
-		"descripcion": "Un verdadero Croissant de manteca, con un proceso de elaboracion de tres días",
+		"imagen": "./images/Tartadeverdura.png", 
+		"nombre": "Tarta de verduras",
+		"precio": 1100,
+		"descripcion": "Rellena de los más exquisitos Zapallitos, cebollas, morron y queso fundido",
 		"cantidad": 1
 	},
 	{
 		"id" : 2,
-		"imagen": "./images/pain.jpg",
-		"nombre": "Pain Aux Chocolat",
-		"precio": 280,
-		"descripcion": "Un delicioso Pain Aux Chocolat, una especialidad verdaderamente hojaldrada",
+		"imagen": "./images/lasagna.png",
+		"nombre": "Lasagna de Carne",
+		"precio": 1800,
+		"descripcion": "Que decirte... más rica imposible. Rellena de carne y verduras ",
 		"cantidad": 1
 	},
 	{
 		"id" : 3,
-		"imagen": "./images/chausson.jpg",
-		"nombre": "Chausson",
-		"precio": 350,
-		"descripcion": "Exisita Vionnoserie rellena de una compoa de manzanas y canela",
-		"cantidad": 0
+		"imagen": "./images/Guisodelentejas.png",
+		"nombre": "Guiso De Lentejas",
+		"precio": 1600,
+		"descripcion": "No necesita presentación, pero requiere que estés con hambre",
+		"cantidad": 1
 	},
 	{
 		"id" : 4,
-		"imagen": "./images/balcarce.jpg",
-		"nombre": "Postre Balcarce",
-		"precio": 1250,
-		"descripcion": "Clásico postre elaborado con merengue, crema de leche,dulce de leche, piononos y nueces. Extra-sweet!",
+		"imagen": "./images/Canelonesdeverdura.png",
+		"nombre": "Canelones de verdura",
+		"precio": 1600,
+		"descripcion": "El mejor sabor en la más rica creppe",
 		"cantidad": 1
 	},
 	{
 		"id" : 5,
-		"imagen": "./images/alfajor.jpg",
-		"nombre": "Alfajor",
-		"precio": 300,
-		"descripcion": "Otro clásico: el alfajor marplatense, relleno de dulce de leche y bañado en chocolate cobretura semi-amargo",
+		"imagen": "./images/Wokdepollo.png",
+		"nombre": "Wok de Pollo",
+		"precio": 1700,
+		"descripcion": "Riquisimo, balanceado y liviano",
 		"cantidad": 1
 	},
 	{
 		"id" : 6,
-		"imagen": "./images/cajatortitas.jpg",
-		"nombre": "Caja de Tortitas",
+		"imagen": "./images/Tortilladepapa.png",
+		"nombre": "Tortilla de papa",
+		"precio": 1300,
+		"descripcion": "Firme afuera, babe adentro ¡Como se debe!",
+		"cantidad": 1	
+	},
+	{
+		"id" : 7,
+		"imagen": "./images/Pastas.png",
+		"nombre": "Pastas",
 		"precio": 1000,
-		"descripcion": "Exclusiva Caja de Tortitas, de seis unidades a eleccion! Se puede elegir entre varios sabores!",
-		"cantidad": 1,
-		"sabor": ["lemon pie", "coco", "valeria", "ricota","manzana", "frutilla"]
+		"descripcion": "Con albondigas y salsa de tomate",
+		"cantidad": 1
+	},
+	{
+		"id" : 8,
+		"imagen": "./images/Pateldepapa.png",
+		"nombre": "Pastel de papa",
+		"precio": 1400,
+		"descripcion": "El clásico que no puede Malir Sal",
+		"cantidad": 1
+	},
+	{
+		"id" : 9,
+		"imagen": "./images/Polloalverdeo.png",
+		"nombre": "Pollo al verdeo",
+		"precio": 1500,
+		"descripcion": "Pollo con la más sabrosa salsa, acompañada con papas",
+		"cantidad": 1
 	}
 ]

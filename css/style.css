@@ -103,7 +103,7 @@ a:hover {
 
 .fotoFondo {
     min-height: 100vh;
-    background: url("../images/wallpaper.jpg");
+    background: url("../images/fotoFondo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -127,7 +127,7 @@ a:hover {
 .banner-title {
     padding: 1rem 2rem;
     text-transform: uppercase;
-    font-family: 'DynaPuff', cursive;
+    font-family: 'verdana', cursive;
     letter-spacing: var(--mainSpacing);
     font-size: 1.5rem;
     background: var(--primaryColor);
@@ -143,7 +143,7 @@ a:hover {
 }
 
 h2 {
-    font-family: 'DynaPuff', cursive;
+    font-family: 'verdana', cursive;
 }
 
 .tituloProductos {
@@ -151,7 +151,7 @@ h2 {
     font-size: 2.5rem;
     text-align: center;
     padding: 10px;
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Verdana', cursive;
 }
 
 .descripcionProductos {
