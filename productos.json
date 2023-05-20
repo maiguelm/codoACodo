@@ -1,7 +1,7 @@
 [
 	{
 		"id" : 1,
-		"imagen": "./images/Tartadeverdura.png", 
+		"imagen": "./images/tarta.jpeg", 
 		"nombre": "Tarta de verduras",
 		"precio": 1100,
 		"descripcion": "Rellena de los más exquisitos Zapallitos, cebollas, morron y queso fundido",

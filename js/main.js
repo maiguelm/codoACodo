@@ -1,8 +1,6 @@
 //DECLARO ARRAYS y VARIABLES
 
 let productos = [];
-const saboresTortitas = ["lemon pie", "coco", "valeria", "ricota", "manzana", "frutilla"];
-let tortitasElegidas = [];
 let carrito = [];
 const inputs = [...document.querySelectorAll(".formulario .input")];
 let compraRealizada = [];
@@ -61,15 +59,15 @@ function cardsProductos() {
     //inyecto las cards al DOM
     productos.forEach((producto) => {
         let carta = document.createElement("div");
-        carta.classname = "card h-100";
+        carta.className = "divCard";
         carta.innerHTML = `
-        <img class="card-img-top" src=${producto.imagen} alt= 'imagen de ${producto.nombre}'>
-        <div class="card-body">
-            <h3 class="card-title tituloProductos">${producto.nombre}</h3>
-            <p class="card-text descripcionProductos">${producto.descripcion}</p>
+        <img class="img-card" src=${producto.imagen} alt= 'imagen de ${producto.nombre}'>
+        <div class="cardBody">
+            <h3 class="tituloProductos">${producto.nombre}</h3>
+            <p class="descripcionProductos">${producto.descripcion}</p>
             <p class="precio">Precio: $ ${producto.precio}</p>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-success btn-large buttonPropiedades" id="agregar${producto.id}" type="button">Agregar al carrito</button>
+                <button class="buttonPropiedades" id="agregar${producto.id}" type="button">Agregar al carrito</button>
             </div>
         `;
 
@@ -153,10 +151,6 @@ const enElCarrito = () => {
             prod.cantidad = nuevaCantidad;
             enElCarrito();
         });
-        //si hay una caja de tortitas, el usuario debería elegir los sabores mediante esta funcion, que guarda la seleccion en un array y la guarda en el local storage
-        if (prod.nombre === "Caja de Tortitas") {
-            imprimirSelect();
-        }
         //modificacion del numero que aparece en el icono del carrito
         itemsCarrito.innerText = carrito.length;
         //guardo el contenido del carrito en el local storage
@@ -164,68 +158,6 @@ const enElCarrito = () => {
     })
 
     precioFinal.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
-}
-
-//FUNCION PARA IMPRIMIR Y TOMAR LOS SABORES DE LAS TORTITAS
-function imprimirSelect() {
-
-    const sabores = saboresTortitas.map((sabores) => sabores.toUpperCase());
-    console.log(sabores);
-    //INYECTO LOS SELECTS PARA ELEGIR LOS SABORES
-    const divSabores = document.createElement("div");
-    divSabores.className = "divSabores";
-    divSabores.innerHTML += `
-              <select id="saboresUno" class="form-select" onchange="saboresElegidos()">
-                  <option selected value="" disabled>Elija su sabor</option>
-                  <option value="${sabores[0]}">${sabores[0]}</option>
-                  <option value="${sabores[1]}">${sabores[1]}</option>
-                  <option value="${sabores[2]}">${sabores[2]}</option>
-                  <option value="${sabores[3]}">${sabores[3]}</option>
-                  <option value="${sabores[4]}">${sabores[4]}</option>
-                  <option value="${sabores[5]}">${sabores[5]}</option>
-              </select>
-              <select id="saboresDos" class="form-select" onchange="saboresElegidos()">
-              <option selected value="" disabled>Elija su sabor</option>
-                <option value="${sabores[0]}">${sabores[0]}</option>
-                <option value="${sabores[1]}">${sabores[1]}</option>
-                <option value="${sabores[2]}">${sabores[2]}</option>
-                <option value="${sabores[3]}">${sabores[3]}</option>
-                <option value="${sabores[4]}">${sabores[4]}</option>
-                <option value="${sabores[5]}">${sabores[5]}</option>
-              </select>  
-              <select id="saboresTres" class="form-select" onchange="saboresElegidos()">
-              <option selected value="" disabled>Elija su sabor</option>
-                <option value="${sabores[0]}">${sabores[0]}</option>
-                <option value="${sabores[1]}">${sabores[1]}</option>
-                <option value="${sabores[2]}">${sabores[2]}</option>
-                <option value="${sabores[3]}">${sabores[3]}</option>
-                <option value="${sabores[4]}">${sabores[4]}</option>
-                <option value="${sabores[5]}">${sabores[5]}</option>
-              </select> 
-          <button id="seleccionarBtn" class="btn btn-success btn-sm" type="button" onchange="saboresElegidos()">Seleccionar</button>
-      `;
-    contenedorCarrito.appendChild(divSabores);
-}
-
-//CON ESTA FUNCION, ESCUCHO LA SELECCION DE SABORES DE TORTITAS REALIZADA POR EL USUARIO
-function saboresElegidos() {
-    //Capturamos los valores de los select
-    let saborPrimero = document.getElementById("saboresUno").value;
-    let saborSegundo = document.getElementById("saboresDos").value;
-    let saborTercero = document.getElementById("saboresTres").value;
-    let btnTortitas = document.getElementById("seleccionarBtn");
-
-    //Imprimimos en consola
-    console.log(
-        "Tus sabores seleccionados son: " + saborPrimero + ", " + saborSegundo + ", " + saborTercero
-    );
-    btnTortitas.addEventListener("click", () => {
-        tortitasElegidas.push(saborPrimero, saborSegundo, saborTercero);
-        const seleccionTortitas = tortitasElegidas.slice(6, 10);
-        console.log(seleccionTortitas);
-        localStorage.setItem("saboresTortitas", JSON.stringify(seleccionTortitas));
-    })
-
 }
 
 // FUNCIONALIDAD DE LAS PARTES (BUTTONS) DEL CARRITO

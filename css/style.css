@@ -146,6 +146,28 @@ h2 {
     font-family: 'verdana', cursive;
 }
 
+.img-card{
+    width: 50%;
+}
+
+.productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.divCard{
+    background-color: rgb(186, 179, 179);
+    padding: 8px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .tituloProductos {
     color: #000;
     font-size: 2.5rem;
@@ -158,6 +180,7 @@ h2 {
     color: #000;
     font-size: 2rem;
     padding: 10px;
+    text-align: center;
 }
 
 .buttonPropiedades {
@@ -616,3 +639,4 @@ div label {
 .slider-next{
     right: 10px;
 }
+
