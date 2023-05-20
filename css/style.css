@@ -6,7 +6,7 @@ html {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #ffffff;
 }
 
 body {
@@ -34,7 +34,7 @@ section {
 .navbar-center {
     width: 100%;
     max-width: 1300px;
-    margin: 0 auto;
+    margin:auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,9 +43,6 @@ section {
 
 .barraNavegacion {
     display: inline-block;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
 }
 
 .btn__navflex {
@@ -143,7 +140,7 @@ a:hover {
 }
 
 h2 {
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Rampart One', cursive;
 }
 
 .tituloProductos {
@@ -151,7 +148,7 @@ h2 {
     font-size: 2.5rem;
     text-align: center;
     padding: 10px;
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Lato', sans-serif;
 }
 
 .descripcionProductos {
@@ -408,6 +405,11 @@ option {
 input[type=radio] {
     width: 16px;
     height: 16px;
+}
+iframe {
+    position: absolute;
+    top: 400px; left: 360px; 
+
 }
 
 .form-control input:focus {
