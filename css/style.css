@@ -104,14 +104,24 @@ a:hover {
 }
 
 .fotoFondo {
-    min-height: 100vh;
+    min-height: 120vh;
     background: url("../images/fotoFondo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: mover 5s;
 }
+
+@keyframes mover {
+    from{
+        min-height: 130vh;
+    }
+    to{
+        min-height: 100vh;
+    }
+ }
 
 .banner {
     text-align: center;
@@ -190,16 +200,16 @@ h2 {
 .buttonPropiedades {
     background-color: #838383;
     margin-top: 15px;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #000;
     border-radius: 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.9rem;
     margin-bottom: 30px;
 }
 
 .precio {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
     color: #000;
@@ -207,7 +217,7 @@ h2 {
 }
 
 p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 2rem;
 }
 
