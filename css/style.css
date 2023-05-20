@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    background: rgb(103, 103, 103);
+    background: gray;
+    opacity: 0.8;
 }
 
 main {
@@ -22,7 +23,7 @@ section {
 }
 
 #navPosition {
-    background: rgb(7, 4, 4);
+    background: #556B2F;
     position: sticky;
     top: 0;
     height: 100px;

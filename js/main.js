@@ -294,28 +294,9 @@ const validarFormulario = (e) => {
 //api que envia el mail
 document.getElementById('form')
     .addEventListener('submit', function (e) {
-        e.preventDefault();
-        console.log(campos);
-        if (campos.email && campos.nombre && campos.telefono) {
-            const serviceID = 'default_service';
-            const templateID = 'template_7xbn0c3';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    Swal.fire('Mensaje enviado correctamente! Gracias por contactarse');;
-                }, (err) => {
-                    alert(JSON.stringify(err));
-                    form.reset();
-                })
             form.reset();
-        } else {
-            swal.fire("Por favor, verifica todos los campos")
-        }
     });
 
-inputs.forEach((input) => {
-    input.addEventListener('blur', validarFormulario);
-});
 
 
 // MODAL DEL CARRITO
