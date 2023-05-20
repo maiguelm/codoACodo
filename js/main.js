@@ -66,7 +66,7 @@ function cardsProductos() {
             <h3 class="tituloProductos">${producto.nombre}</h3>
             <p class="descripcionProductos">${producto.descripcion}</p>
             <p class="precio">Precio: $ ${producto.precio}</p>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="">
                 <button class="buttonPropiedades" id="agregar${producto.id}" type="button">Agregar al carrito</button>
             </div>
         `;
