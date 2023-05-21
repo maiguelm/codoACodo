@@ -22,60 +22,9 @@ section {
     padding: 10vh 0 2vh 0;
 }
 
-#navPosition {
-    background: #556B2F;
-    position: sticky;
-    top: 0;
-    height: 100px;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-}
-
-.navbar-center {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-}
-
-.barraNavegacion {
-    display: inline-block;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-
-}
-
-.btn__navflex {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    color: #000;
-}
-
-.enlacesBarra {
-    margin-top: 3rem;
-    border-radius: 5px;
-}
-
-.enlacesBarra ul {
-    list-style: none;
-}
-
-.enlacesBarra ul li {
-    padding: 5px;
-    max-width: 390px;
-    background-color: rgb(93, 93, 93);
-    opacity: 0.8;
-    border-radius: 2px;
-}
-
 a {
     color: #000;
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Josefin Sans', cursive;
     text-decoration: none;
     font-size: 2rem;
 }
@@ -87,10 +36,39 @@ a:hover {
 .nav-icon {
     font-size: 1.5rem;
 }
+.nav-icon i{
+    color: #000;
+}
 
 .cart-btn {
     position: relative;
     cursor: pointer;
+}
+
+.navPosicion{
+    padding: 2rem;
+    background: #556B2F;
+/*     position: sticky;
+    top: 0;
+    z-index: 1000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-icon{
+    max-width: 8rem;
+}
+
+.abrir-menu,
+.cerrar-menu{
+    display: none;
+}
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+    gap: 10rem;
 }
 
 #cart-items {
@@ -100,8 +78,73 @@ a:hover {
     background: var(--primaryColor);
     padding: 0 5px;
     border-radius: 30%;
-    color: var(--mainWhite);
+    color: var(--mainBlack);
 }
+
+@media only screen and (max-width: 950px) {
+    .abrir-menu, .cerrar-menu{
+        display: block;
+        font-size: 2rem;
+        color: #000;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 2s;
+    }
+    .abrir-menu:hover{
+        color: rgb(82, 56, 56)
+    }
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #556B2F;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        z-index: 1000;
+    }
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-list{
+        flex-direction: column;
+        align-items: flex- end;
+        gap: 2rem;
+    }
+    .menu--show{
+        opacity: 1;
+        pointer-events: unset;
+        transition: opacity 2s;
+        --transform: translateY(100);
+        --transition: transform 1s 1s;
+    }
+    .productos{
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .productos{
+        display: flex !important;
+        flex-direction: column;
+    }
+    .precio{
+        text-align: center;
+    }
+    .slider-btn{
+        width: 15px !important;
+        height: 15px !important;
+        font-size: 10px !important;
+    }
+} 
 
 .fotoFondo {
     min-height: 120vh;
@@ -228,25 +271,11 @@ p {
     padding-top: 10px;
 }
 
-.fa-telegram,
-.fa-facebook,
 .fa-instagram {
     font-size: 40px;
     color: #b6a2a2;
 }
-/*
-.fa-whatsapp-square {
-    font-size: 50px;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    color: rgb(48, 204, 48);
 
-    @media only screen and (max-width: 950px) {
-        font-size: 40px;
-    }
-}
-*/
 .fraseFooter {
     padding: 10px;
     font-size: 1.5rem;
@@ -277,13 +306,13 @@ p {
     display: inline-block;
     width: 100%;
     text-align: center;
-    font-family: 'DynaPuff', cursive !important;
+    font-family: 'Josefin Sans', cursive !important;
     font-size: 1.8em;
     color: #d4c0c0;
 }
 
 .form__margin form input,
-form__margin form textarea {
+.form__margin form textarea {
     font: 1.8em sans-serif !important;
     width: 100%;
     box-sizing: border-box;
@@ -371,12 +400,10 @@ form__margin form textarea {
     max-width: 300px;
 }
 
-
 .cerrarCarrito:hover {
     color: #F26250;
     background-color: #fff;
 }
-
 
 .productoEnCarrito {
     border-left: 5px solid lightblue;
@@ -498,7 +525,7 @@ input[type=radio] {
 }
 
 .form-layout {
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Josefin Sans', cursive;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -559,7 +586,7 @@ div label {
 }
 
 .formularioCompra input {
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Josefin Sans', cursive;
     font-size: 1.4rem;
     color: #000
 }

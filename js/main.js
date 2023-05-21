@@ -17,11 +17,13 @@ const precioFinal = document.getElementById("precioTotal");
 const cantidad = document.getElementById("cantidad");
 const botonComprar = document.getElementById("comprar-carrito");
 const iconoCarrito = document.getElementsByClassName("nav-icon");
-
 const openModal = document.querySelector('.abrirCarrito');
 const modal = document.querySelector('.miModal');
 const closeModal = document.querySelector('.cerrarCarrito');
 const modalCarrito = document.querySelector('.modalContenedor');
+const nav = document.querySelector("#nav");
+const abrirNav = document.querySelector("#btnAbrir");
+const cerrarNav = document.querySelector("#btnCerrar")
 
 
 // INVOCO FUNCIONES
@@ -179,16 +181,23 @@ vaciarCarrito.addEventListener("click", () => {
 })
 
 botonComprar.addEventListener("click", () => {
-    compraRealizada.push(carrito.filter(producto => producto));
-    localStorage.setItem("compraRealizada", JSON.stringify(compraRealizada));
-    console.log(compraRealizada);
-    carrito.length = 0;
-    itemsCarrito.innerText = 0;
-    Swal.fire('Gracias por tu compra!! Estamos redirigiéndote a la página de pago');
-    setTimeout(() => {
-        location.href = "./pages/compras.html";
-    }, 2000);
-    enElCarrito();
+    if (carrito.length === 0){
+        Swal.fire('Tu carrito está vacío');
+        setTimeout(() => {
+            location.href = "./index.html";
+        }, 2000)
+    }else {
+        compraRealizada.push(carrito.filter(producto => producto));
+        localStorage.setItem("compraRealizada", JSON.stringify(compraRealizada));
+        console.log(compraRealizada);
+        carrito.length = 0;
+        itemsCarrito.innerText = 0;
+        Swal.fire('Gracias por tu compra!! Estamos redirigiéndote a la página de pago');
+        setTimeout(() => {
+            location.href = "./pages/compras.html";
+        }, 2000);
+        enElCarrito();
+    }
 })
 
 
@@ -357,47 +366,14 @@ setInterval( () => {
     Next();
 }, 3000);
 
+//MENU HAMBURGUESA
 
-/* const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
+abrirNav.addEventListener("click", () =>{
+    nav.classList.add("menu--show");
+    nav.classList.add("visible");
+})
 
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
-
-let counter = 1;
-const size = carouselImages[0].clientWidth;
-
-carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-
-nextButton.addEventListener('click', () => {
-  if (counter >= carouselImages.length - 1) {
-    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-    counter = 0;
-    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-  } else {
-    counter++;
-    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-  }
-});
-
-prevButton.addEventListener('click', () => {
-  if (counter <= 0) return;
-  counter--;
-  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-  carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-});
-
-carouselSlide.addEventListener('transitionend', () => {
-  if (carouselImages[counter].id === 'lastClone') {
-    carouselSlide.style.transition = 'none';
-    counter = carouselImages.length - 2;
-    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-  }
-  if (carouselImages[counter].id === 'firstClone') {
-    carouselSlide.style.transition = 'none';
-    counter = 1;
-    carouselSlide.style.transform = `translateX(${-size * counter + size / 2}px)`;
-  }
-});
- */
+cerrarNav.addEventListener("click", () =>{
+    nav.classList.remove("menu--show");
+    nav.classList.remove("visible");
+})
