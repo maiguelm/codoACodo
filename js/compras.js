@@ -60,7 +60,13 @@ const realizarCompra = () => {
 }
 
 //metodo de entrega
+const iframeLoad = () => { 
+    infoExtra.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15621.316194662162!2d-58.3967047697613!3d-34.604738110822716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac630121623%3A0x53386f2ac88991a9!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses!2sar!4v1684611119031!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+}
+
 const formaEntrega = () => {
+    iframeLoad();
+    
     envioBtn.addEventListener("change", () => {
         if (envioBtn.checked) {
             infoExtra.innerHTML = `
@@ -112,12 +118,12 @@ const formaEntrega = () => {
         localStorage.setItem("domicilioEntrega", JSON.stringify(domicilioEntrega));
     });
 
-    retiroLocalBtn.addEventListener("change", () => {
+    retiroLocalBtn.addEventListener("click", () => {
         if (retiroLocalBtn.checked) {
-            infoExtra.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15621.316194662162!2d-58.3967047697613!3d-34.604738110822716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac630121623%3A0x53386f2ac88991a9!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses!2sar!4v1684611119031!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-            
-            let nuevaSumaFinalDos = sumaFinal -= costoEnvio;
-            checkoutTotal.innerText = nuevaSumaFinalDos;
+           iframeLoad();
+
+           let nuevaSumaFinalDos = sumaFinal -= costoEnvio;
+           checkoutTotal.innerText = nuevaSumaFinalDos;
         }
     });
 }
