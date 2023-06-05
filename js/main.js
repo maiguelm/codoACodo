@@ -229,6 +229,7 @@ const campos = {
 }
 
 const validarFormulario = (e) => {
+    e.preventDefault();
     switch (e.target.name) {
         case "nombre":
             if ((formularioNombre.value === "") || (!lettersPattern.test(formularioNombre.value))) {
@@ -247,6 +248,7 @@ const validarFormulario = (e) => {
                     icon: 'success',
                     title: `Revisa los datos ingresados`
                 })
+                console.log("funciona")
             } else {
                 campos["nombre"] = true
             }
