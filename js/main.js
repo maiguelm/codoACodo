@@ -210,12 +210,12 @@ botonBanner.addEventListener("mousedown", () => {
 })
 
 
-
 //FORMULARIO DE CONTACTO
 const formularioNombre = document.querySelector(".nombreForm");
 const telefonoFormulario = document.querySelector(".telForm");
 const correoElectronico = document.getElementById("email");
 const formulario = document.querySelector(".formulario");
+const form = document.getElementById("form");
 const btn = document.getElementById('btnSubmit');
 const lettersPattern = /^[A-Z À-Ú]+$/i;
 const numbersPattern = /^[0-9]+$/;
@@ -223,89 +223,86 @@ const isEmail = email => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|
 
 //VALIDACION MANUAL DEL FORMULARIO
 const campos = {
-    nombre: false,
-    email: false,
-    telefono: false
-}
+  nombre: false,
+  email: false,
+  telefono: false
+};
 
 const validarFormulario = (e) => {
-    e.preventDefault();
-    switch (e.target.name) {
-        case "nombre":
-            if ((formularioNombre.value === "") || (!lettersPattern.test(formularioNombre.value))) {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-right',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: false,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: `Revisa los datos ingresados`
-                })
-                console.log("funciona")
-            } else {
-                campos["nombre"] = true
-            }
-            break;
-        case "email":
-            if ((correoElectronico.value === "") || (!isEmail(correoElectronico.value))) {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-right',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: false,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: `Revisa los datos ingresados`
-                })
-            } else {
-                campos["email"] = true
-            }
-            break;
-        case "phone":
-            if ((telefonoFormulario.value === "") || (!numbersPattern.test(telefonoFormulario.value))) {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-right',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: false,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: `Revisa los datos ingresados`
-                })
-            } else {
-                campos["telefono"] = true
-            }
-            break;
-        default:
-            console.log("Formulario ok")
-            break;
-    }
+  switch (e.target.name) {
+    case "nombre":
+      if (formularioNombre.value === "" || !lettersPattern.test(formularioNombre.value)) {
+        mostrarMensaje("error", "Revisa los datos ingresados");
+      } else {
+        campos["nombre"] = true;
+      }
+      break;
+    case "email":
+      if (correoElectronico.value === "" || !isEmail(correoElectronico.value)) {
+        mostrarMensaje("error", "Revisa los datos ingresados");
+      } else {
+        campos["email"] = true;
+      }
+      break;
+    case "phone":
+      if (telefonoFormulario.value === "" || !numbersPattern.test(telefonoFormulario.value)) {
+        mostrarMensaje("error", "Revisa los datos ingresados");
+      } else {
+        campos["telefono"] = true;
+      }
+      break;
+    default:
+      console.log("Formulario ok");
+      break;
+  }
+};
 
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  
+  // Validar todos los campos antes de enviar el formulario
+  for (const campo in campos) {
+    if (!campos[campo]) {
+      mostrarMensaje("error", "Completa todos los campos");
+      return;
+    }
+  }
+  
+  // Enviar el formulario si todos los campos son válidos
+  form.submit();
+});
+
+function mostrarMensaje(tipo, mensaje) {
+  const mensajeDiv = document.createElement("div");
+  mensajeDiv.classList.add("mensaje");
+  mensajeDiv.classList.add(tipo);
+  mensajeDiv.textContent = mensaje;
+  formulario.appendChild(mensajeDiv);
+
+  setTimeout(() => {
+    mensajeDiv.remove();
+  }, 3000);
 }
 
+// Escuchar los eventos de los campos del formulario
+formularioNombre.addEventListener('keyup', validarFormulario);
+formularioNombre.addEventListener('blur', validarFormulario);
+correoElectronico.addEventListener('keyup', validarFormulario);
+correoElectronico.addEventListener('blur', validarFormulario);
+telefonoFormulario.addEventListener('keyup', validarFormulario);
+telefonoFormulario.addEventListener('blur', validarFormulario);
+
+
 //api que envia el mail
-document.getElementById('form')
-    .addEventListener('submit', function (e) {
-            form.reset();
+
+form.addEventListener('submit', function (e) {
+        if (campos.nombre && campos.email && campos.telefono) {
+        swal.fire("Mensaje enviado")
+        form.reset();
+
+    }  else {
+        swal.fire("Por favor, verifica todos los campos")
+    }
     });
 
 
